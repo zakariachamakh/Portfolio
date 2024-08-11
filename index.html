@@ -1,3 +1,6 @@
+Here's the full HTML code with the adjustments you requested:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,36 +26,81 @@
     <meta property="og:image:width" content="1280" />
     <meta property="og:image:height" content="800" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Add colorful circles in the background */
+        body::before {
+            content: "";
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            background-color: rgba(255, 99, 71, 0.5);
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        body::after {
+            content: "";
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 300px;
+            height: 300px;
+            background-color: rgba(70, 130, 180, 0.5);
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        @media (min-width: 1024px) {
+            main.container {
+                max-width: 60%;
+                margin: 0 auto;
+            }
+
+            .chip-group .chip {
+                display: inline-block;
+                margin-right: 8px;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .chip-group .chip {
+                display: block;
+                margin-bottom: 8px;
+            }
+        }
+    </style>
 </head>
 
-<body class="bg-slate-900 ">
+<body class="bg-slate-900 relative">
 
-    <main class="relative my-8 container flex flex-col items-center">
+    <main class="container my-8 flex flex-col items-center">
         <div class="will-change-opacity relative h-40 w-40 overflow-hidden rounded-full will-change-transform">
             <img src="https://media.licdn.com/dms/image/D4E03AQEpt5VhqbGQaQ/profile-displayphoto-shrink_800_800/0/1706876477991?e=1725494400&v=beta&t=5RHfR-SWMP-IX1UPylX3TOZB2f7UeEAmiSF-dy-Xb04"
                 alt="Zakaria Chamakh">
         </div>
 
-        <div class="mt-8 flex flex-col justify-center space-y-4 md:mt-0 md:w-2/3">
-            <h1 class="will-change-opacity text-3xl text-gray-300 text-center p-3  font-bold will-change-transform">
+        <div class="mt-8 flex flex-col justify-center space-y-4 md:mt-0">
+            <h1 class="will-change-opacity text-3xl text-gray-300 text-center p-3 font-bold will-change-transform">
                 👋 Hey! I'm Zakaria
             </h1>
             <h2 class="will-change-opacity text-lg text-center pb-8 font-medium text-gray-300 will-change-transform">
                 Software Engineer • Mobile Development • Junior Data Science • Junior Entrepreneur
             </h2>
             <h2 class="mb-8 text-3xl font-bold text-gray-300">Who Am I? 🤔 </h2>
-            <p class="text-md text-gray-300 will-change-opacity text-lg  will-change-transform">
+            <p class="text-md text-gray-300 will-change-opacity text-lg will-change-transform">
                 Hey there, my name’s <strong>Zakaria Chamakh</strong> (b. 2000, Morocco).
             </p>
-            <p class="text-md text-gray-300 will-change-opacity text-lg  will-change-transform">
+            <p class="text-md text-gray-300 will-change-opacity text-lg will-change-transform">
                 I’m a <strong>Junior serial digital entrepreneur</strong> passionate about <strong>SaaS, microSaaS</strong>
                 & <strong>Mobile Apps</strong> business. with <strong>4+ years</strong> of experience in the digital &
                 software engineering field.
             </p>
-            <p class="text-md text-gray-300 will-change-opacity text-lg  will-change-transform">
+            <p class="text-md text-gray-300 will-change-opacity text-lg will-change-transform">
                 Former <strong>senior software engineer</strong> and IT consultant at multiple private companies.
             </p>
-            <p class="text-md text-gray-300 will-change-opacity text-lg  will-change-transform">
+            <p class="text-md text-gray-300 will-change-opacity text-lg will-change-transform">
                 I <strong>built</strong> a dozen of products 🚀 .. <strong>sold</strong> a few ones 💰 .. and
                 <strong>failed/learned</strong> from many 📖
             </p>
@@ -64,7 +112,9 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                         <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com divcense - https://fontawesome.com/divcense/free Copyright 2024 Fonticons, Inc.-->
                         <path fill="#ffffff"
-                            d="M448 96c0-35.3-28.7-64-64-64H64C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96zM265.8 407.7c0-1.8 0-6 .1-11.6c.1-11.4 .1-28.8 .1-43.7c0-15.6-5.2-25.5-11.3-30.7c37-4.1 76-9.2 76-73.1c0-18.2-6.5-27.3-17.1-39c1.7-4.3 7.4-22-1.7-45c-13.9-4.3-45.7 17.9-45.7 17.9c-13.2-3.7-27.5-5.6-41.6-5.6s-28.4 1.9-41.6 5.6c0 0-31.8-22.2-45.7-17.9c-9.1 22.9-3.5 40.6-1.7 45c-10.6 11.7-15.6 20.8-15.6 39c0 63.6 37.3 69 74.3 73.1c-4.8 4.3-9.1 11.7-10.6 22.3c-9.5 4.3-33.8 11.7-48.3-13.9c-9.1-15.8-25.5-17.1-25.5-17.1c-16.2-.2-1.1 10.2-1.1 10.2c10.8 5 18.4 24.2 18.4 24.2c9.7 29.7 56.1 19.7 56.1 19.7c0 9 .1 21.7 .1 30.6c0 4.8 .1 8.6 .1 10c0 4.3-3 9.5-11.5 8C106 393.6 59.8 330.8 59.8 257.4c0-91.8 70.2-161.5 162-161.5s166.2 69.7 166.2 161.5c.1 73.4-44.7 136.3-110.7 158.3c-8.4 1.5-11.5-3.7-11.5-8zm-90.5-54.8c-.2-1.5 1.1-2.8 3-3.2c1.9-.2 3.7 .6 3.9 1.9c.3 1.3-1 2.6-3 3c-1.9 .4-3.7-.4-3.9-1.7zm-9.1 3.2c-2.2 .2-3.7-.9-3.7-2.4c0-1.3 1.5-2.4 3.5-2.4c1.9-.2 3.7 .9 3.7 2.4c0 1.3-1.5 2.4-3.5 2.4zm-14.3-2.2c-1.9-.4-3.2-1.9-2.8-3.2s2.4-1.9 4.1-1.5c2 .6 3.3 2.1 2.8 3.4c-.4 1.3-2.4 1.9-4.1 1.3zm-12.5-7.3c-1.5-1.3-1.9-3.2-.9-4.1c.9-1.1 2.8-.9 4.3 .6c1.3 1.3 1.8 3.3 .9 4.1c-.9 1.1-2.8 .9-4.3-.6zm-8.5-10c-1.1-1.5-1.1-3.2 0-3.9c1.1-.9 2.8-.2 3.7 1.3c1.1 1.5 1.1 3.3 0 4.1c-.9 .6-2.6 0-3.7-1.5zm-6.3-8.8c-1.1-1.3-1.3-2.8-.4-3.5c.9-.9 2.4-.4 3.5 .6c1.1 1.3 1.3 2.8 .4 3.5c-.9 .9-2.4 .4-3.5-.6zm-6-6.4c-1.3-.6-1.9-1.7-1.5-2.6c.4-.6 1.5-.9 2.8-.4c1.3 .7 1.9 1.8 1.5 2.6c-.4 .9-1.7 1.1-2.8 .4z" />
+                            d="M448 96c0-35.3-28.7-64-64-64H64C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96zM265.8 407.7c0-1.8 0-6 .1-11.6c.1-11.4 .1-28.8 .1-43.7c0-15.6-5.2-25.5-11.3-30.7c37-4.1 76-9.2 76-73.1c0-18.2-6.5-27.3-17.1-39c1.7-4.3 7.4-22-1.7-45c-13.9-4.3-45.7 17.9-45.7 17.9c-13.2-3.7-27.5-5.6-41.6-5.6s-28.4 1.9-41.6 5.6c0 0-31.8-22.2-45.7-17.9c-9.1 22.9-3.5 40.6-1.7 45c-10.6 11.7-15.6 20.8-15.6 39c0 63.6 37.3 69 74.3 73.1c-4.8 4.3-9.1 11.7-10.6 22.3c-9.5 4.3-33.8 11.7-48.3-13.9c-9.1-15.8-25.5-17.1-25.5-17.1c-16.2-.2-1.1 10.2-1
+
+.1 10.2c10.8 5 18.4 24.2 18.4 24.2c9.7 29.7 56.1 19.7 56.1 19.7c0 9 .1 21.7 .1 30.6c0 4.8 .1 8.6 .1 10c0 4.3-3 9.5-11.5 8C106 393.6 59.8 330.8 59.8 257.4c0-91.8 70.2-161.5 162-161.5s166.2 69.7 166.2 161.5c.1 73.4-44.7 136.3-110.7 158.3c-8.4 1.5-11.5-3.7-11.5-8zm-90.5-54.8c-.2-1.5 1.1-2.8 3-3.2c1.9-.2 3.7 .6 3.9 1.9c.3 1.3-1 2.6-3 3c-1.9 .4-3.7-.4-3.9-1.7zm-9.1 3.2c-2.2 .2-3.7-.9-3.7-2.4c0-1.3 1.5-2.4 3.5-2.4c1.9-.2 3.7 .9 3.7 2.4c0 1.3-1.5 2.4-3.5 2.4zm-14.3-2.2c-1.9-.4-3.2-1.9-2.8-3.2s2.4-1.9 4.1-1.5c2 .6 3.3 2.1 2.8 3.4c-.4 1.3-2.4 1.9-4.1 1.3zm-12.5-7.3c-1.5-1.3-1.9-3.2-.9-4.1c.9-1.1 2.8-.9 4.3 .6c1.3 1.3 1.8 3.3 .9 4.1c-.9 1.1-2.8 .9-4.3-.6zm-8.5-10c-1.1-1.5-1.1-3.2 0-3.9c1.1-.9 2.8-.2 3.7 1.3c1.1 1.5 1.1 3.3 0 4.1c-.9 .6-2.6 0-3.7-1.5zm-6.3-8.8c-1.1-1.3-1.3-2.8-.4-3.5c.9-.9 2.4-.4 3.5 .6c1.1 1.3 1.3 2.8 .4 3.5c-.9 .9-2.4 .4-3.5-.6zm-6-6.4c-1.3-.6-1.9-1.7-1.5-2.6c.4-.6 1.5-.9 2.8-.4c1.3 .7 1.9 1.8 1.5 2.6c-.4 .9-1.7 1.1-2.8 .4z" />
                     </svg>
                 </a>
 
@@ -113,7 +163,9 @@
                                     <p class="text-xs sm:text-sm md:text-md text-gray-300">Nuts, snacks, sweet treats
                                         ecommerce website in Morocco</p>
                                 </div>
-                            </a>
+                            </
+
+a>
 
                             <!-- Arrow icon for hover (pointing upwards) -->
                             <div
@@ -128,46 +180,46 @@
                             </div>
 
                             <!-- Tags -->
-                            <ul class="flex flex-wrap justify-center md:justify-start w-full gap-x-2 gap-y-2 mt-2">
+                            <ul class="chip-group flex flex-wrap justify-center md:justify-start w-full gap-x-2 gap-y-2 mt-2">
                                 <div class="flex space-x-1.5 w-full justify-center md:justify-start mt-2">
                                     <div class="md:w-auto mr-1.5 mt-2">
                                         <div
-                                            class="items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            class="chip items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
                                             Wordpress
                                         </div>
                                     </div>
                                     <div class="mr-1.5 mt-2">
                                         <div
-                                            class="rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            class="chip rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
                                             DigitalOcean
                                         </div>
                                     </div>
                                     <div class="mr-1.5 mt-2">
                                         <div
-                                            class="rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            class="chip rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
                                             Cloudflare
                                         </div>
                                     </div>
                                     <div class="mr-1.5 mt-2">
                                         <div
-                                            class="items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            class="chip items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
                                             ecommerce
                                         </div>
                                     </div>
                                     <div class="mr-1.5 mt-2">
                                         <div
-                                            class="items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            class="chip items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
                                             Youcanpay
                                         </div>
                                     </div>
                                 </div>
                                 <div class="flex space-x-1.5 w-full justify-center md:justify-start mt-2">
                                     <span
-                                        class="px-2 py-1 rounded-full bg-green-700 text-white font-medium text-xs sm:text-sm md:text-xs">
+                                        class="chip px-2 py-1 rounded-full bg-green-700 text-white font-medium text-xs sm:text-sm md:text-xs">
                                         🚀 Live
                                     </span>
                                     <span
-                                        class="px-2 py-1 rounded-full bg-blue-700 text-white font-medium text-xs sm:text-sm md:text-xs">
+                                        class="chip px-2 py-1 rounded-full bg-blue-700 text-white font-medium text-xs sm:text-sm md:text-xs">
                                         🏷️ Freelance
                                     </span>
                                 </div>
@@ -210,40 +262,40 @@
                             </div>
 
                             <!-- Tags -->
-                            <ul class="flex flex-wrap justify-center md:justify-start w-full gap-x-2 gap-y-2 mt-2">
+                            <ul class="chip-group flex flex-wrap justify-center md:justify-start w-full gap-x-2 gap-y-2 mt-2">
                                 <div class="flex space-x-1.5 w-full justify-center md:justify-start mt-2">
                                     <div class="md:w-auto mr-1.5 mt-2">
                                         <div
-                                            class="items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            class="chip items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
                                             Laravel
                                         </div>
                                     </div>
                                     <div class="mr-1.5 mt-2">
                                         <div
-                                            class="rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            class="chip rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
                                             DigitalOcean
                                         </div>
                                     </div>
                                     <div class="mr-1.5 mt-2">
                                         <div
-                                            class="rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            class="chip rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
                                             Cyberpanel
                                         </div>
                                     </div>
                                     <div class="mr-1.5 mt-2">
                                         <div
-                                            class="items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            class="chip items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
                                             Vue3
                                         </div>
                                     </div>
                                 </div>
                                 <div class="flex space-x-1.5 w-full justify-center md:justify-start mt-2">
                                     <span
-                                        class="px-2 py-1 rounded-full bg-green-700 text-white font-medium text-xs sm:text-sm md:text-xs">
+                                        class="chip px-2 py-1 rounded-full bg-green-700 text-white font-medium text-xs sm:text-sm md:text-xs">
                                         🚀 Live
                                     </span>
                                     <span
-                                        class="px-2 py-1 rounded-full bg-blue-700 text-white font-medium text-xs sm:text-sm md:text-xs">
+                                        class="chip px-2 py-1 rounded-full bg-blue-700 text-white font-medium text-xs sm:text-sm md:text-xs">
                                         🏷️ Freelance
                                     </span>
                                 </div>
@@ -255,6 +307,8 @@
                             class="group relative rounded-xl border-[1px] border-tertiary bg-secondary/50 p-4 border-slate-700 hover:border-slate-200 transition duration-200 hover:border-accent md:hover:scale-[1.01] hover:bg-secondary/60">
                             <a href="https://www.secondmind.tech/saas/"
                                 class="flex flex-col items-center space-y-2 sm:space-y-4 md:space-y-0 md:space-x-4 md:flex-row"
+
+
                                 target="_blank">
                                 <div class="h-12 w-12 rounded-xl bg-tertiary p-1.5 shadow-md text-center text-gray-400">
                                     <div class="relative h-12 w-12 overflow-hidden">
@@ -284,34 +338,34 @@
                             </div>
 
                             <!-- Tags -->
-                            <ul class="flex flex-wrap justify-center md:justify-start w-full gap-x-2 gap-y-2 mt-2">
+                            <ul class="chip-group flex flex-wrap justify-center md:justify-start w-full gap-x-2 gap-y-2 mt-2">
                                 <div class="flex space-x-1.5 w-full justify-center md:justify-start mt-2">
                                     <div class="md:w-auto mr-1.5 mt-2">
                                         <div
-                                            class="items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            class="chip items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
                                             Gitbook
                                         </div>
                                     </div>
                                     <div class="mr-1.5 mt-2">
                                         <div
-                                            class="rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            class="chip rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
                                             Github
                                         </div>
                                     </div>
                                     <div class="mr-1.5 mt-2">
                                         <div
-                                            class="rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            class="chip rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
                                             knowledge Base
                                         </div>
                                     </div>
                                 </div>
                                 <div class="flex space-x-1.5 w-full justify-center md:justify-start mt-2">
                                     <span
-                                        class="px-2 py-1 rounded-full bg-green-700 text-white font-medium text-xs sm:text-sm md:text-xs">
+                                        class="chip px-2 py-1 rounded-full bg-green-700 text-white font-medium text-xs sm:text-sm md:text-xs">
                                         🚀 Live
                                     </span>
                                     <span
-                                        class="px-2 py-1 rounded-full bg-amber-700 text-white font-medium text-xs sm:text-sm md:text-xs">
+                                        class="chip px-2 py-1 rounded-full bg-amber-700 text-white font-medium text-xs sm:text-sm md:text-xs">
                                         📂 Directory
                                     </span>
                                 </div>
@@ -352,34 +406,34 @@
                             </div>
 
                             <!-- Tags -->
-                            <ul class="flex flex-wrap justify-center md:justify-start w-full gap-x-2 gap-y-2 mt-2">
+                            <ul class="chip-group flex flex-wrap justify-center md:justify-start w-full gap-x-2 gap-y-2 mt-2">
                                 <div class="flex space-x-1.5 w-full justify-center md:justify-start mt-2">
                                     <div class="md:w-auto mr-1.5 mt-2">
                                         <div
-                                            class="items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            class="chip items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
                                             Laravel
                                         </div>
                                     </div>
                                     <div class="mr-1.5 mt-2">
                                         <div
-                                            class="rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            class="chip rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
                                             Firebase
                                         </div>
                                     </div>
                                     <div class="mr-1.5 mt-2">
                                         <div
-                                            class="items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            class="chip rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
                                             OpenAi API
                                         </div>
                                     </div>
                                 </div>
                                 <div class="flex space-x-1.5 w-full justify-center md:justify-start mt-2">
                                     <span
-                                        class="px-2 py-1 rounded-full bg-green-700 text-white font-medium text-xs sm:text-sm md:text-xs">
+                                        class="chip px-2 py-1 rounded-full bg-green-700 text-white font-medium text-xs sm:text-sm md:text-xs">
                                         🚀 Live
                                     </span>
                                     <span
-                                        class="px-2 py-1 rounded-full bg-cyan-700 text-white font-medium text-xs sm:text-sm md:text-xs">
+                                        class="chip px-2 py-1 rounded-full bg-cyan-700 text-white font-medium text-xs sm:text-sm md:text-xs">
                                         💻 SAAS
                                     </span>
                                 </div>
@@ -395,7 +449,9 @@
                                 <div class="h-12 w-12 rounded-xl bg-tertiary p-1.5 shadow-md text-center text-gray-400">
                                     <div class="relative h-12 w-12 overflow-hidden">
                                         <img class="cursor-pointer transition-all rounded-md"
-                                            src="./images/2.png" alt="CRM Aven" />
+                                            src="./images/
+
+2.png" alt="CRM Aven" />
                                     </div>
                                 </div>
                                 <div class="flex-grow flex flex-col text-center md:text-left">
@@ -420,40 +476,40 @@
                             </div>
 
                             <!-- Tags -->
-                            <ul class="flex flex-wrap justify-center md:justify-start w-full gap-x-2 gap-y-2 mt-2">
+                            <ul class="chip-group flex flex-wrap justify-center md:justify-start w-full gap-x-2 gap-y-2 mt-2">
                                 <div class="flex space-x-1.5 w-full justify-center md:justify-start mt-2">
                                     <div class="md:w-auto mr-1.5 mt-2">
                                         <div
-                                            class="items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            class="chip items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
                                             Laravel
                                         </div>
                                     </div>
                                     <div class="mr-1.5 mt-2">
                                         <div
-                                            class="rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            class="chip rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
                                             Mailgun
                                         </div>
                                     </div>
                                     <div class="mr-1.5 mt-2">
                                         <div
-                                            class="items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            class="chip rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
                                             Stripe
                                         </div>
                                     </div>
                                     <div class="mr-1.5 mt-2">
                                         <div
-                                            class="items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            class="chip items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
                                             Google Calendar
                                         </div>
                                     </div>
                                 </div>
                                 <div class="flex space-x-1.5 w-full justify-center md:justify-start mt-2">
                                     <span
-                                        class="px-2 py-1 rounded-full bg-green-700 text-white font-medium text-xs sm:text-sm md:text-xs">
+                                        class="chip px-2 py-1 rounded-full bg-green-700 text-white font-medium text-xs sm:text-sm md:text-xs">
                                         🚀 Live
                                     </span>
                                     <span
-                                        class="px-2 py-1 rounded-full bg-cyan-700 text-white font-medium text-xs sm:text-sm md:text-xs">
+                                        class="chip px-2 py-1 rounded-full bg-cyan-700 text-white font-medium text-xs sm:text-sm md:text-xs">
                                         💻 SAAS
                                     </span>
                                 </div>
@@ -494,34 +550,34 @@
                             </div>
 
                             <!-- Tags -->
-                            <ul class="flex flex-wrap justify-center md:justify-start w-full gap-x-2 gap-y-2 mt-2">
+                            <ul class="chip-group flex flex-wrap justify-center md:justify-start w-full gap-x-2 gap-y-2 mt-2">
                                 <div class="flex space-x-1.5 w-full justify-center md:justify-start mt-2">
                                     <div class="md:w-auto mr-1.5 mt-2">
                                         <div
-                                            class="items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            class="chip items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
                                             Copywriting
                                         </div>
                                     </div>
                                     <div class="mr-1.5 mt-2">
                                         <div
-                                            class="rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            class="chip rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
                                             2D animation
                                         </div>
                                     </div>
                                     <div class="mr-1.5 mt-2">
                                         <div
-                                            class="items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            class="chip items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
                                             Social Media Manager
                                         </div>
                                     </div>
                                 </div>
                                 <div class="flex space-x-1.5 w-full justify-center md:justify-start mt-2">
                                     <span
-                                        class="px-2 py-1 rounded-full bg-green-700 text-white font-medium text-xs sm:text-sm md:text-xs">
+                                        class="chip px-2 py-1 rounded-full bg-green-700 text-white font-medium text-xs sm:text-sm md:text-xs">
                                         🚀 Live
                                     </span>
                                     <span
-                                        class="px-2 py-1 rounded-full bg-lime-700 text-white font-medium text-xs sm:text-sm md:text-xs">
+                                        class="chip px-2 py-1 rounded-full bg-lime-700 text-white font-medium text-xs sm:text-sm md:text-xs">
                                         ✍️ Content Creation
                                     </span>
                                 </div>
@@ -538,7 +594,9 @@
                     <div
                         class="group relative rounded-xl border-[1px] border-tertiary bg-secondary/50 p-4 border-slate-700 hover:border-slate-200 transition duration-200 hover:border-accent md:hover:scale-[1.01] hover:bg-secondary/60">
                         <a href="https://lnkd.in/dABynnsr"
-                            class="flex flex-col items-center space-y-2 sm:space-y-4 md:space-y-0 md:space-x-4 md:flex-row"
+                            class="flex flex-col items-center space-y
+
+-2 sm:space-y-4 md:space-y-0 md:space-x-4 md:flex-row"
                             target="_blank">
                             <div class="h-12 w-12 rounded-xl bg-tertiary p-1.5 shadow-md text-center text-gray-400">
                                 <div class="relative h-12 w-12 overflow-hidden">
@@ -563,58 +621,58 @@
                                 viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd"
                                     d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                        </div>
-
-                        <!-- Tags -->
-                        <ul class="flex flex-wrap justify-center md:justify-start w-full gap-x-2 gap-y-2 mt-2">
-                            <div class="flex space-x-1.5 w-full justify-center md:justify-start mt-2">
-                                <div class="md:w-auto mr-1.5 mt-2">
-                                    <div
-                                        class="items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
-                                        Data Visualization
-                                    </div>
-                                </div>
-                                <div class="mr-1.5 mt-2">
-                                    <div
-                                        class="rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
-                                        Data modeling
-                                    </div>
-                                </div>
-                                <div class="mr-1.5 mt-2">
-                                    <div
-                                        class="rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
-                                        Data Analysis
-                                    </div>
-                                </div>
-                                <div class="mr-1.5 mt-2">
-                                    <div
-                                        class="items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
-                                        Data cleaning
-                                    </div>
-                                </div>
-                                <div class="mr-1.5 mt-2">
-                                    <div
-                                        class="items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
-                                        SQL
-                                    </div>
-                                </div>
-                                <div class="mr-1.5 mt-2">
-                                    <div
-                                        class="items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
-                                        Python
-                                    </div>
-                                </div>
-                                <div class="mr-1.5 mt-2">
-                                    <div
-                                        class="items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
-                                        Power BI
-                                    </div>
-                                </div>
+                                        clip-rule="evenodd" />
+                                </svg>
                             </div>
-                        </ul>
-                    </div>
+
+                            <!-- Tags -->
+                            <ul class="chip-group flex flex-wrap justify-center md:justify-start w-full gap-x-2 gap-y-2 mt-2">
+                                <div class="flex space-x-1.5 w-full justify-center md:justify-start mt-2">
+                                    <div class="md:w-auto mr-1.5 mt-2">
+                                        <div
+                                            class="chip items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            Data Visualization
+                                        </div>
+                                    </div>
+                                    <div class="mr-1.5 mt-2">
+                                        <div
+                                            class="chip rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            Data modeling
+                                        </div>
+                                    </div>
+                                    <div class="mr-1.5 mt-2">
+                                        <div
+                                            class="chip rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            Data Analysis
+                                        </div>
+                                    </div>
+                                    <div class="mr-1.5 mt-2">
+                                        <div
+                                            class="chip items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            Data cleaning
+                                        </div>
+                                    </div>
+                                    <div class="mr-1.5 mt-2">
+                                        <div
+                                            class="chip items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            SQL
+                                        </div>
+                                    </div>
+                                    <div class="mr-1.5 mt-2">
+                                        <div
+                                            class="chip items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            Python
+                                        </div>
+                                    </div>
+                                    <div class="mr-1.5 mt-2">
+                                        <div
+                                            class="chip items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            Power BI
+                                        </div>
+                                    </div>
+                                </div>
+                            </ul>
+                        </div>
 
                     <!-- Data Analytics Project 2 -->
                     <div
@@ -645,58 +703,60 @@
                                 viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd"
                                     d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                        </div>
-
-                        <!-- Tags -->
-                        <ul class="flex flex-wrap justify-center md:justify-start w-full gap-x-2 gap-y-2 mt-2">
-                            <div class="flex space-x-1.5 w-full justify-center md:justify-start mt-2">
-                                <div class="md:w-auto mr-1.5 mt-2">
-                                    <div
-                                        class="items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
-                                        Data Visualization
-                                    </div>
-                                </div>
-                                <div class="mr-1.5 mt-2">
-                                    <div
-                                        class="rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
-                                        Scripting
-                                    </div>
-                                </div>
-                                <div class="mr-1.5 mt-2">
-                                    <div
-                                        class="rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
-                                        Jupyter
-                                    </div>
-                                </div>
-                                <div class="mr-1.5 mt-2">
-                                    <div
-                                        class="items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
-                                        Google sheets
-                                    </div>
-                                </div>
-                                <div class="mr-1.5 mt-2">
-                                    <div
-                                        class="items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
-                                        SQL
-                                    </div>
-                                </div>
-                                <div class="mr-1.5 mt-2">
-                                    <div
-                                        class="items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
-                                        Python
-                                    </div>
-                                </div>
-                                <div class="mr-1.5 mt-2">
-                                    <div
-                                        class="items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
-                                        Power BI
-                                    </div>
-                                </div>
+                                        clip-rule="evenodd" />
+                                </svg>
                             </div>
-                        </ul>
-                    </div>
+
+                            <!-- Tags -->
+                            <ul class="chip-group flex flex-wrap justify-center md:justify-start w-full gap-x-2 gap-y-2 mt-2">
+                                <div class="flex space-x-1.5 w-full justify-center md:justify-start mt-2">
+                                    <div class="md:w-auto mr-1.5 mt-2">
+                                        <div
+                                            class="chip items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            Data Visualization
+                                        </div>
+                                    </div>
+                                    <div class="mr-1.5 mt-2">
+                                        <div
+                                            class="chip rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            Scripting
+                                        </div>
+                                    </div>
+                                    <div class="mr-1.5 mt-2">
+                                        <div
+                                            class="chip rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            Jupyter
+                                        </div>
+                                    </div>
+                                    <div class="mr-1.5 mt-2">
+                                        <
+
+div
+                                            class="chip items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            Google sheets
+                                        </div>
+                                    </div>
+                                    <div class="mr-1.5 mt-2">
+                                        <div
+                                            class="chip items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            SQL
+                                        </div>
+                                    </div>
+                                    <div class="mr-1.5 mt-2">
+                                        <div
+                                            class="chip items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            Python
+                                        </div>
+                                    </div>
+                                    <div class="mr-1.5 mt-2">
+                                        <div
+                                            class="chip items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            Power BI
+                                        </div>
+                                    </div>
+                                </div>
+                            </ul>
+                        </div>
 
                     <!-- Data Analytics Project 3 -->
                     <div
@@ -727,58 +787,58 @@
                                 viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd"
                                     d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                        </div>
-
-                        <!-- Tags -->
-                        <ul class="flex flex-wrap justify-center md:justify-start w-full gap-x-2 gap-y-2 mt-2">
-                            <div class="flex space-x-1.5 w-full justify-center md:justify-start mt-2">
-                                <div class="md:w-auto mr-1.5 mt-2">
-                                    <div
-                                        class="items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
-                                        Data Visualization
-                                    </div>
-                                </div>
-                                <div class="mr-1.5 mt-2">
-                                    <div
-                                        class="rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
-                                        Scripting
-                                    </div>
-                                </div>
-                                <div class="mr-1.5 mt-2">
-                                    <div
-                                        class="rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
-                                        Google Colab
-                                    </div>
-                                </div>
-                                <div class="mr-1.5 mt-2">
-                                    <div
-                                        class="items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
-                                        Microsoft Excel
-                                    </div>
-                                </div>
-                                <div class="mr-1.5 mt-2">
-                                    <div
-                                        class="items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
-                                        SQL
-                                    </div>
-                                </div>
-                                <div class="mr-1.5 mt-2">
-                                    <div
-                                        class="items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
-                                        Python
-                                    </div>
-                                </div>
-                                <div class="mr-1.5 mt-2">
-                                    <div
-                                        class="items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
-                                        Power BI
-                                    </div>
-                                </div>
+                                        clip-rule="evenodd" />
+                                </svg>
                             </div>
-                        </ul>
-                    </div>
+
+                            <!-- Tags -->
+                            <ul class="chip-group flex flex-wrap justify-center md:justify-start w-full gap-x-2 gap-y-2 mt-2">
+                                <div class="flex space-x-1.5 w-full justify-center md:justify-start mt-2">
+                                    <div class="md:w-auto mr-1.5 mt-2">
+                                        <div
+                                            class="chip items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            Data Visualization
+                                        </div>
+                                    </div>
+                                    <div class="mr-1.5 mt-2">
+                                        <div
+                                            class="chip rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            Scripting
+                                        </div>
+                                    </div>
+                                    <div class="mr-1.5 mt-2">
+                                        <div
+                                            class="chip rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            Google Colab
+                                        </div>
+                                    </div>
+                                    <div class="mr-1.5 mt-2">
+                                        <div
+                                            class="chip items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            Microsoft Excel
+                                        </div>
+                                    </div>
+                                    <div class="mr-1.5 mt-2">
+                                        <div
+                                            class="chip items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            SQL
+                                        </div>
+                                    </div>
+                                    <div class="mr-1.5 mt-2">
+                                        <div
+                                            class="chip items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            Python
+                                        </div>
+                                    </div>
+                                    <div class="mr-1.5 mt-2">
+                                        <div
+                                            class="chip items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            Power BI
+                                        </div>
+                                    </div>
+                                </div>
+                            </ul>
+                        </div>
 
                     <!-- Data Analytics Project 4 -->
                     <div
@@ -808,59 +868,61 @@
                                 class="h-4 w-4 text-slate-800 group-hover:text-slate-200 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 group-focus-visible:-translate-y-1 group-focus-visible:translate-x-1 motion-reduce:transition-none transform -rotate-45"
                                 viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd"
-                                    d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                        </div>
+                                    d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-
 
-                        <!-- Tags -->
-                        <ul class="flex flex-wrap justify-center md:justify-start w-full gap-x-2 gap-y-2 mt-2">
-                            <div class="flex space-x-1.5 w-full justify-center md:justify-start mt-2">
-                                <div class="md:w-auto mr-1.5 mt-2">
-                                    <div
-                                        class="items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
-                                        Data Visualization
-                                    </div>
-                                </div>
-                                <div class="mr-1.5 mt-2">
-                                    <div
-                                        class="rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
-                                        Scripting
-                                    </div>
-                                </div>
-                                <div class="mr-1.5 mt-2">
-                                    <div
-                                        class="rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
-                                        Google Colab
-                                    </div>
-                                </div>
-                                <div class="mr-1.5 mt-2">
-                                    <div
-                                        class="items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
-                                        Microsoft Excel
-                                    </div>
-                                </div>
-                                <div class="mr-1.5 mt-2">
-                                    <div
-                                        class="items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
-                                        SQL
-                                    </div>
-                                </div>
-                                <div class="mr-1.5 mt-2">
-                                    <div
-                                        class="items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
-                                        Python
-                                    </div>
-                                </div>
-                                <div class="mr-1.5 mt-2">
-                                    <div
-                                        class="items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
-                                        Power BI
-                                    </div>
-                                </div>
+7.22 7.22a.75.75 0 000 1.06z"
+                                        clip-rule="evenodd" />
+                                </svg>
                             </div>
-                        </ul>
-                    </div>
+
+                            <!-- Tags -->
+                            <ul class="chip-group flex flex-wrap justify-center md:justify-start w-full gap-x-2 gap-y-2 mt-2">
+                                <div class="flex space-x-1.5 w-full justify-center md:justify-start mt-2">
+                                    <div class="md:w-auto mr-1.5 mt-2">
+                                        <div
+                                            class="chip items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            Data Visualization
+                                        </div>
+                                    </div>
+                                    <div class="mr-1.5 mt-2">
+                                        <div
+                                            class="chip rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            Scripting
+                                        </div>
+                                    </div>
+                                    <div class="mr-1.5 mt-2">
+                                        <div
+                                            class="chip rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            Google Colab
+                                        </div>
+                                    </div>
+                                    <div class="mr-1.5 mt-2">
+                                        <div
+                                            class="chip items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            Microsoft Excel
+                                        </div>
+                                    </div>
+                                    <div class="mr-1.5 mt-2">
+                                        <div
+                                            class="chip items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            SQL
+                                        </div>
+                                    </div>
+                                    <div class="mr-1.5 mt-2">
+                                        <div
+                                            class="chip items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            Python
+                                        </div>
+                                    </div>
+                                    <div class="mr-1.5 mt-2">
+                                        <div
+                                            class="chip items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            Power BI
+                                        </div>
+                                    </div>
+                                </div>
+                            </ul>
+                        </div>
 
                     <!-- Data Analytics Project 5 -->
                     <div
@@ -891,52 +953,52 @@
                                 viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd"
                                     d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                        </div>
-
-                        <!-- Tags -->
-                        <ul class="flex flex-wrap justify-center md:justify-start w-full gap-x-2 gap-y-2 mt-2">
-                            <div class="flex space-x-1.5 w-full justify-center md:justify-start mt-2">
-                                <div class="md:w-auto mr-1.5 mt-2">
-                                    <div
-                                        class="items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
-                                        Data Visualization
-                                    </div>
-                                </div>
-                                <div class="mr-1.5 mt-2">
-                                    <div
-                                        class="rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
-                                        Scripting
-                                    </div>
-                                </div>
-                                <div class="mr-1.5 mt-2">
-                                    <div
-                                        class="rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
-                                        Google Colab
-                                    </div>
-                                </div>
-                                <div class="mr-1.5 mt-2">
-                                    <div
-                                        class="items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
-                                        SQL
-                                    </div>
-                                </div>
-                                <div class="mr-1.5 mt-2">
-                                    <div
-                                        class="items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
-                                        Python
-                                    </div>
-                                </div>
-                                <div class="mr-1.5 mt-2">
-                                    <div
-                                        class="items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
-                                        Power BI
-                                    </div>
-                                </div>
+                                        clip-rule="evenodd" />
+                                </svg>
                             </div>
-                        </ul>
-                    </div>
+
+                            <!-- Tags -->
+                            <ul class="chip-group flex flex-wrap justify-center md:justify-start w-full gap-x-2 gap-y-2 mt-2">
+                                <div class="flex space-x-1.5 w-full justify-center md:justify-start mt-2">
+                                    <div class="md:w-auto mr-1.5 mt-2">
+                                        <div
+                                            class="chip items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            Data Visualization
+                                        </div>
+                                    </div>
+                                    <div class="mr-1.5 mt-2">
+                                        <div
+                                            class="chip rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            Scripting
+                                        </div>
+                                    </div>
+                                    <div class="mr-1.5 mt-2">
+                                        <div
+                                            class="chip rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            Google Colab
+                                        </div>
+                                    </div>
+                                    <div class="mr-1.5 mt-2">
+                                        <div
+                                            class="chip items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            SQL
+                                        </div>
+                                    </div>
+                                    <div class="mr-1.5 mt-2">
+                                        <div
+                                            class="chip items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            Python
+                                        </div>
+                                    </div>
+                                    <div class="mr-1.5 mt-2">
+                                        <div
+                                            class="chip items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs sm:text-sm md:text-xs font-medium leading-5 text-teal-300">
+                                            Power BI
+                                        </div>
+                                    </div>
+                                </div>
+                            </ul>
+                        </div>
                 </div>
             </div>
 
