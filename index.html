@@ -27,3 +27,13 @@
     <iframe src="https://bento.me/zakariachamakh" class="responsive-iframe"></iframe>
 </body>
 </html>
+
+<script>
+document.querySelector('iframe').onload = function() {
+    const iframeDoc = this.contentDocument || this.contentWindow.document;
+    const elementToRemove = iframeDoc.querySelector('.styles_button__sP771');
+    if (elementToRemove) {
+        elementToRemove.style.display = 'none';
+    }
+};
+</script>
